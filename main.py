@@ -7,7 +7,6 @@ from monsterFactory import MonsterFactory
 
 
 # CHARACTER #
-
 character_factory = CharacterFactory()
 
 # character = factory.create_character("John", "human","warrior", 10, 10 , 10 , 10, 10, 10)
@@ -23,7 +22,6 @@ print("Cha:", character.charisma)
 
 
 # MONSTER #
-
 monster_factory = MonsterFactory()
 
 monster = monster_factory.create_monster("Subbegutt", "Goblin", "ranger", 10, 10, 10, 10, 10, 10)
@@ -38,7 +36,7 @@ print("Cha:", monster.charisma)
 
 
 # ROLL #
-
 d4_roll = Dice.roll_d4()
 # Input to roll method should be 4, 6, 8, 20
-print(f"Roll: {d4_roll}")
+print(f"1D4 Roll: {d4_roll}")
+print(f"1D6 Roll: {Dice.roll_d6()}")
