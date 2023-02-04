@@ -1,7 +1,10 @@
-x Char Creation
+x Character Creation
 x Race bonus and defaults
 x Dice roll
-Monster creation
-Initiative
-Combat
+x Monster creation
+Initiative (Who goes first)
+Combat (1 character vs 1 monster)
+Armour (minus vs an attack roll)
+Weapons (adds to an attack roll)
+Group (More than one monster)
 ?
