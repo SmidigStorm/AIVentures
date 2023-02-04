@@ -5,7 +5,8 @@ from monsterFactory import MonsterFactory
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-# from character_factory import CharacterFactory
+
+# CHARACTER #
 
 character_factory = CharacterFactory()
 
@@ -21,10 +22,6 @@ print("Wis:", character.wisdom)
 print("Cha:", character.charisma)
 
 
-d4_roll = Dice.roll_d4()
-# Input to roll method should be 4, 6, 8, 20
-print(f"Roll: {d4_roll}")
-
 # MONSTER #
 
 monster_factory = MonsterFactory()
@@ -38,3 +35,10 @@ print("Dex:", monster.dexterity)
 print("Int:", monster.intelligence)
 print("Wis:", monster.wisdom)
 print("Cha:", monster.charisma)
+
+
+# ROLL #
+
+d4_roll = Dice.roll_d4()
+# Input to roll method should be 4, 6, 8, 20
+print(f"Roll: {d4_roll}")
