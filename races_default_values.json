@@ -1,5 +1,5 @@
 {
-    "human": {
+    "Human": {
         "strength": 10,
         "dexterity": 10,
         "constitution": 10,
@@ -7,7 +7,7 @@
         "wisdom": 10,
         "charisma": 10
     },
-    "dwarf": {
+    "Dwarf": {
         "strength": 8,
         "dexterity": 9,
         "constitution": 10,
@@ -15,7 +15,7 @@
         "wisdom": 8,
         "charisma": 8
     },
-    "elf": {
+    "Elf": {
         "strength": 8,
         "dexterity": 10,
         "constitution": 9,
@@ -23,7 +23,7 @@
         "wisdom": 8,
         "charisma": 10
     },
-    "halfling": {
+    "Halfling": {
         "strength": 8,
         "dexterity": 10,
         "constitution": 9,
@@ -31,7 +31,7 @@
         "wisdom": 8,
         "charisma": 10
     },
-    "gnome": {
+    "Gnome": {
         "strength": 8,
         "dexterity": 9,
         "constitution": 10,
@@ -39,7 +39,7 @@
         "wisdom": 8,
         "charisma": 8
     },
-    "half-elf": {
+    "Half-elf": {
         "strength": 8,
         "dexterity": 10,
         "constitution": 9,
@@ -47,7 +47,7 @@
         "wisdom": 8,
         "charisma": 10
     },
-    "half-orc": {
+    "Half-orc": {
         "strength": 10,
         "dexterity": 9,
         "constitution": 10,

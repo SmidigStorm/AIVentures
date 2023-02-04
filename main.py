@@ -11,7 +11,7 @@ from monsterFactory import MonsterFactory
 character_factory = CharacterFactory()
 
 # character = factory.create_character("John", "human","warrior", 10, 10 , 10 , 10, 10, 10)
-character = character_factory.create_character("Lazarus", "elf", "ranger", 10, 10, 10, 10, 10, 10)
+character = character_factory.create_character("Lazarus", "Elf", "ranger", 10, 10, 10, 10, 10, 10)
 print("Name:" + character.name)
 print("Race:" + character.race)
 print("Class:" + character.class_name)
@@ -26,7 +26,7 @@ print("Cha:", character.charisma)
 
 monster_factory = MonsterFactory()
 
-monster = monster_factory.create_monster("Subbegutt", "goblin", "ranger", 10, 10, 10, 10, 10, 10)
+monster = monster_factory.create_monster("Subbegutt", "Goblin", "ranger", 10, 10, 10, 10, 10, 10)
 print("Name:" + monster.name)
 print("Race:" + monster.race)
 print("Class:" + monster.class_name)
