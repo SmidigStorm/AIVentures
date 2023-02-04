@@ -1,0 +1,7 @@
+x Char Creation
+x Race bonus and defaults
+x Dice roll
+Monster creation
+Initiative
+Combat
+?
