@@ -1,6 +1,6 @@
 import unittest
 from dice import Dice
-
+# This is more a test of making a unittest. Testing randomint does not really make any sense...
 class TestDice(unittest.TestCase):
     def test_roll_d4(self):
         # Arrange

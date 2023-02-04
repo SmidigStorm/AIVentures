@@ -1,0 +1,27 @@
+{
+
+      "goblin": {
+        "Strength": 8,
+        "Dexterity": 14,
+        "Constitution": 10,
+        "Intelligence": 10,
+        "Wisdom": 8,
+        "Charisma": 8
+      },
+      "orc": {
+        "Strength": 16,
+        "Dexterity": 12,
+        "Constitution": 16,
+        "Intelligence": 7,
+        "Wisdom": 11,
+        "Charisma": 10
+      },
+      "troll": {
+        "Strength": 18,
+        "Dexterity": 13,
+        "Constitution": 20,
+        "Intelligence": 7,
+        "Wisdom": 9,
+        "Charisma": 7
+      }
+}
