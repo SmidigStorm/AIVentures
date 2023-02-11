@@ -37,13 +37,15 @@ print("Cha:", monster.charisma)
 
 
 # ROLL #
-d4_roll = Dice.roll_d4()
+#d4_roll = Dice.roll_d4()
 # Input to roll method should be 4, 6, 8, 20
-print(f"1D4 Roll: {d4_roll}")
-print(f"1D6 Roll: {Dice.roll_d6()}")
+#print(f"1D4 Roll: {d4_roll}")
+#print(f"1D6 Roll: {Dice.roll_d6()}")
 
 # BATTLE #
 battle = Battle(character, monster)
-initiative_list = battle.calculate_initiative()
+
+
+initiative_list = battle.calculate_initiative() # Who goes first
 for item in initiative_list:
     print(f"{item[0]} has an initiative roll of {item[1]}")
