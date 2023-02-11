@@ -11,8 +11,8 @@ class MonsterFactory:
         race_stats = self.races[race]
         monster = Monster()
 
-        npc = monster.Monster(name, race, class_name, race_stats["Strength"], race_stats["Dexterity"],
+        m = monster.Monster(name, race, class_name, race_stats["Strength"], race_stats["Dexterity"],
                               race_stats["Constitution"],
                               race_stats["Intelligence"],
                               race_stats["Wisdom"], race_stats["Charisma"])
-        return npc
+        return m
