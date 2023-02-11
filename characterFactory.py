@@ -10,8 +10,7 @@ class CharacterFactory:
         with open("races_default_values.json") as default_values_file:
             self.races_defaults = json.load(default_values_file)
 
-    def create_character(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom,
-                         charisma):
+    def create_character(self, name, race, class_name):
         race_stats = self.races[race]
         race_default_values = self.races_defaults[race]
 

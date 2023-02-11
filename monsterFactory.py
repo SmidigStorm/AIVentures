@@ -7,8 +7,7 @@ class MonsterFactory:
         with open("monster_default_values.json") as f:
             self.races = json.load(f)
 
-    def create_monster(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom,
-                       charisma):
+    def create_monster(self, name, race, class_name):
         race_stats = self.races[race]
         monster = Monster()
 
