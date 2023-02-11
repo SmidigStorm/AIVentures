@@ -7,7 +7,7 @@ class Battle:
     # I could also see it having battle helper classes also for specific calculations or similar
 
     def __init__(self, character, monster):
-        self.player = character
+        self.character = character
         self.monster = monster
 
     def calculate_initiative(self):
@@ -16,3 +16,4 @@ class Battle:
         initiative.append((self.monster.name, self.monster.dexterity + Dice.roll_d20()))
         initiative.sort(key=lambda x: x[1], reverse=True)
         return initiative
+

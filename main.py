@@ -1,3 +1,4 @@
+from Battle import Battle
 from characterFactory import CharacterFactory
 from dice import Dice
 from monsterFactory import MonsterFactory
@@ -24,7 +25,7 @@ print("Cha:", character.charisma)
 # MONSTER #
 monster_factory = MonsterFactory()
 
-monster = monster_factory.create_monster("Subbegutt", "Goblin", "ranger", 10, 10, 10, 10, 10, 10)
+monster = monster_factory.create_monster("Baltazar", "Goblin", "ranger", 10, 10, 10, 10, 10, 10)
 print("Name:" + monster.name)
 print("Race:" + monster.race)
 print("Class:" + monster.class_name)
@@ -40,3 +41,9 @@ d4_roll = Dice.roll_d4()
 # Input to roll method should be 4, 6, 8, 20
 print(f"1D4 Roll: {d4_roll}")
 print(f"1D6 Roll: {Dice.roll_d6()}")
+
+# BATTLE #
+battle = Battle(character, monster)
+initiative_list = battle.calculate_initiative()
+for item in initiative_list:
+    print(f"{item[0]} has an initiative roll of {item[1]}")
