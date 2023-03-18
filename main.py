@@ -1,4 +1,4 @@
-from Battle import Battle
+from battle import Battle
 from characterFactory import CharacterFactory
 from dice import Dice
 from monsterFactory import MonsterFactory
