@@ -1,8 +1,18 @@
-from entity import Entity
-
-class Monster(Entity):
+class Entity:
     def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
-        super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
+        self.name = name
+        self.race = race
+        self.class_name = class_name
+        self.strength = strength
+        self.dexterity = dexterity
+        self.constitution = constitution
+        self.intelligence = intelligence
+        self.wisdom = wisdom
+        self.charisma = charisma
+        self.skills = {}
+        self.inventory = []
+        self.level = 1
+        self.xp = 0
 
     def roll_stats(self):
         # Code to roll for stats
@@ -27,18 +37,3 @@ class Monster(Entity):
 
     def gain_xp(self, xp):
         self.xp += xp
-
-    def display_stats(self):
-        print("Name:", self.name)
-        print("Race:", self.race)
-        print("Class:", self.class_name)
-        print("Strength:", self.strength)
-        print("Dexterity:", self.dexterity)
-        print("Constitution:", self.constitution)
-        print("Intelligence:", self.intelligence)
-        print("Wisdom:", self.wisdom)
-        print("Charisma:", self.charisma)
-        print("Skills:", self.skills)
-        print("Inventory:", self.inventory)
-        print("Level:", self.level)
-        print("Experience Points:", self.xp)

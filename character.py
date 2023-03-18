@@ -1,30 +1,8 @@
-class Character:
-    # This is a very basic implementation of a character class,
-    # it would be a good starting point for creating a character creator.
-    # You can then use this class to create new characters and set their properties.
-    #
-    # You can use the roll_stats() method to randomly assign the statistics
-    # , assign_stats() method to set the statistics manually
-    # , the add_skill() method to add skills and proficiency to the character
-    # , the add_item() method to add an item to the inventory
-    # , the level_up() method to increase the character's level
-    # , the gain_xp() method to increase the character's XP
-    # , and the display_stats() method to display the character's information.
-    class Character:
-        def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
-            self.name = name
-            self.race = race
-            self.class_name = class_name
-            self.strength = strength
-            self.dexterity = dexterity
-            self.constitution = constitution
-            self.intelligence = intelligence
-            self.wisdom = wisdom
-            self.charisma = charisma
+from entity import Entity
 
-    def roll_stats(self):
-        # Code to roll for stats
-        pass
+class Character(Entity):
+    def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
+        super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
 
     def assign_stats(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
         self.strength = strength
@@ -45,18 +23,21 @@ class Character:
 
     def gain_xp(self, xp):
         self.xp += xp
-# this method needs moving or changed to a get stats..
-    def display_stats(self):
-        print("Name:", self.name)
-        print("Race:", self.race)
-        print("Class:", self.char_class)
-        print("Strength:", self.strength)
-        print("Dexterity:", self.dexterity)
-        print("Constitution:", self.constitution)
-        print("Intelligence:", self.intelligence)
-        print("Wisdom:", self.wisdom)
-        print("Charisma:", self.charisma)
-        print("Skills:", self.skills)
-        print("Inventory:", self.inventory)
-        print("Level:", self.level)
-        print("Experience Points:", self.xp)
+
+    def get_stats(self):
+        stats = (
+            f"Name: {self.name}\n"
+            f"Race: {self.race}\n"
+            f"Class: {self.char_class}\n"
+            f"Strength: {self.strength}\n"
+            f"Dexterity: {self.dexterity}\n"
+            f"Constitution: {self.constitution}\n"
+            f"Intelligence: {self.intelligence}\n"
+            f"Wisdom: {self.wisdom}\n"
+            f"Charisma: {self.charisma}\n"
+            f"Skills: {self.skills}\n"
+            f"Inventory: {self.inventory}\n"
+            f"Level: {self.level}\n"
+            f"Experience Points: {self.xp}"
+        )
+        return stats

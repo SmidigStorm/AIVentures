@@ -14,9 +14,9 @@ class CharacterFactory:
         race_stats = self.races[race]
         race_default_values = self.races_defaults[race]
 
-        char = Character()
+        #char = Character()
 
-        character = char.Character(name, race, class_name, race_default_values["strength"] + race_stats["strength_bonus"],
+        character = Character(name, race, class_name, race_default_values["strength"] + race_stats["strength_bonus"],
                               race_default_values["dexterity"] + race_stats["dexterity_bonus"],
                               race_default_values["constitution"] + race_stats["constitution_bonus"],
                               race_default_values["intelligence"] + race_stats["intelligence_bonus"],
