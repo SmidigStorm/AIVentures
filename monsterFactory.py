@@ -13,5 +13,5 @@ class MonsterFactory:
         m = Monster(name, race, class_name, race_stats["Strength"], race_stats["Dexterity"],
                               race_stats["Constitution"],
                               race_stats["Intelligence"],
-                              race_stats["Wisdom"], race_stats["Charisma"])
+                              race_stats["Wisdom"], race_stats["Charisma"], 10, 2, 0)
         return m

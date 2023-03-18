@@ -1,8 +1,12 @@
 from entity import Entity
 
 class Monster(Entity):
-    def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
+    def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma,
+                 hit_points, armor_class, damage_reduction):
         super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
+        self.hit_points = hit_points
+        self.armor_class = armor_class
+        self.damage_reduction = damage_reduction
 
     def roll_stats(self):
         # Code to roll for stats

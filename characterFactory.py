@@ -19,7 +19,7 @@ class CharacterFactory:
                               race_default_values["constitution"] + race_stats["constitution_bonus"],
                               race_default_values["intelligence"] + race_stats["intelligence_bonus"],
                               race_default_values["wisdom"] + race_stats["wisdom_bonus"],
-                              race_default_values["charisma"] + race_stats["charisma_bonus"])
+                              race_default_values["charisma"] + race_stats["charisma_bonus"], 10, 2, 0)
         return character
 
 # 1d6: 4 rolls remove lowest, choose BEST one. Instead of default

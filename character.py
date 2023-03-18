@@ -1,8 +1,12 @@
 from entity import Entity
 
 class Character(Entity):
-    def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
+    def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma,
+                 hit_points, armor_class, damage_reduction):
         super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
+        self.hit_points = hit_points
+        self.armor_class = armor_class
+        self.damage_reduction = damage_reduction
 
     def assign_stats(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
         self.strength = strength
@@ -11,6 +15,7 @@ class Character(Entity):
         self.intelligence = intelligence
         self.wisdom = wisdom
         self.charisma = charisma
+
 
     def add_skill(self, skill, proficiency):
         self.skills[skill] = proficiency

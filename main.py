@@ -34,3 +34,5 @@ battle = Battle(character, monster)
 initiative_list = battle.calculate_initiative() # Who goes first
 for item in initiative_list:
     print(f"{item[0]} has an initiative roll of {item[1]}")
+
+
