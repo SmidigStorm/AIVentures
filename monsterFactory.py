@@ -9,7 +9,6 @@ class MonsterFactory:
 
     def create_monster(self, name, race, class_name):
         race_stats = self.races[race]
-        #monster = Monster()
 
         m = Monster(name, race, class_name, race_stats["Strength"], race_stats["Dexterity"],
                               race_stats["Constitution"],
