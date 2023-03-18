@@ -12,28 +12,13 @@ character_factory = CharacterFactory()
 
 
 character = character_factory.create_character("Lazarus", "Elf", "ranger")
-print("Name:" + character.name)
-print("Race:" + character.race)
-print("Class:" + character.class_name)
-print("Str:", character.strength)
-print("Dex:", character.dexterity)
-print("Int:", character.intelligence)
-print("Wis:", character.wisdom)
-print("Cha:", character.charisma)
-
+print(character.get_stats())
 
 # MONSTER #
 monster_factory = MonsterFactory()
 
 monster = monster_factory.create_monster("Baltazar", "Goblin", "ranger")
-print("Name:" + monster.name)
-print("Race:" + monster.race)
-print("Class:" + monster.class_name)
-print("Str:", monster.strength)
-print("Dex:", monster.dexterity)
-print("Int:", monster.intelligence)
-print("Wis:", monster.wisdom)
-print("Cha:", monster.charisma)
+print(monster.get_stats())
 
 
 # ROLL #

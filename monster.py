@@ -28,17 +28,20 @@ class Monster(Entity):
     def gain_xp(self, xp):
         self.xp += xp
 
-    def display_stats(self):
-        print("Name:", self.name)
-        print("Race:", self.race)
-        print("Class:", self.class_name)
-        print("Strength:", self.strength)
-        print("Dexterity:", self.dexterity)
-        print("Constitution:", self.constitution)
-        print("Intelligence:", self.intelligence)
-        print("Wisdom:", self.wisdom)
-        print("Charisma:", self.charisma)
-        print("Skills:", self.skills)
-        print("Inventory:", self.inventory)
-        print("Level:", self.level)
-        print("Experience Points:", self.xp)
+    def get_stats(self):
+        stats = (
+            f"Name: {self.name}\n"
+            f"Race: {self.race}\n"
+            f"Class: {self.class_name}\n"
+            f"Strength: {self.strength}\n"
+            f"Dexterity: {self.dexterity}\n"
+            f"Constitution: {self.constitution}\n"
+            f"Intelligence: {self.intelligence}\n"
+            f"Wisdom: {self.wisdom}\n"
+            f"Charisma: {self.charisma}\n"
+            f"Skills: {self.skills}\n"
+            f"Inventory: {self.inventory}\n"
+            f"Level: {self.level}\n"
+            f"Experience Points: {self.xp}"
+        )
+        return stats

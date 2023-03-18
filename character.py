@@ -28,7 +28,7 @@ class Character(Entity):
         stats = (
             f"Name: {self.name}\n"
             f"Race: {self.race}\n"
-            f"Class: {self.char_class}\n"
+            f"Class: {self.class_name}\n"
             f"Strength: {self.strength}\n"
             f"Dexterity: {self.dexterity}\n"
             f"Constitution: {self.constitution}\n"
