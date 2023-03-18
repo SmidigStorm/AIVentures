@@ -35,7 +35,8 @@ initiative_list = battle.calculate_initiative() # Who goes first
 for item in initiative_list:
     print(f"{item[0]} has an initiative roll of {item[1]}")
 
-battle.run_battle()
+winner = battle.run_battle()
+battle.end_battle(winner == "player")
 print("---- AFTER BATTLE ----")
 print(character.get_stats())
 print(monster.get_stats())

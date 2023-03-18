@@ -51,3 +51,15 @@ class Battle:
                 winner = self.check_victory()
                 if winner is not None:
                     return winner
+
+    def end_battle(self, character_won):
+        if character_won:
+            xp_award = self.calculate_xp_award()
+            self.character.gain_xp(xp_award)
+            print(f"{self.character.name} has won the battle and gained {xp_award} experience points!")
+        else:
+            print(f"{self.monster.name} has won the battle!")
+
+    def calculate_xp_award(self):
+        # Example: Award XP based on the monster's level
+        return 100 * self.monster.level

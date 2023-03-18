@@ -13,6 +13,7 @@ class Entity:
         self.inventory = []
         self.level = 1
         self.xp = 0
+        XP_TABLE = [0, 100, 300, 600, 1000, 1500, 2100, 2800, 3600, 4500]  # Example XP table
 
     def roll_stats(self):
         # Code to roll for stats
@@ -37,3 +38,5 @@ class Entity:
 
     def gain_xp(self, xp):
         self.xp += xp
+        while self.level < len(self.XP_TABLE) and self.xp >= self.XP_TABLE[self.level]:
+            self.level_up()
