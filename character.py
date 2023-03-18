@@ -43,6 +43,9 @@ class Character(Entity):
             f"Skills: {self.skills}\n"
             f"Inventory: {self.inventory}\n"
             f"Level: {self.level}\n"
-            f"Experience Points: {self.xp}"
+            f"Experience Points: {self.xp}\n"
+            f"Hit Points: {self.hit_points}\n"
+            f"Armor Class: {self.armor_class}\n"
+            f"Damage Reduction: {self.damage_reduction}\n"
         )
         return stats

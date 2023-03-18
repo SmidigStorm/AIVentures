@@ -10,7 +10,7 @@ from monsterFactory import MonsterFactory
 # CHARACTER #
 character_factory = CharacterFactory()
 
-
+print("---- BEFORE BATTLE ----")
 character = character_factory.create_character("Lazarus", "Elf", "ranger")
 print(character.get_stats())
 
@@ -35,4 +35,7 @@ initiative_list = battle.calculate_initiative() # Who goes first
 for item in initiative_list:
     print(f"{item[0]} has an initiative roll of {item[1]}")
 
-
+battle.run_battle()
+print("---- AFTER BATTLE ----")
+print(character.get_stats())
+print(monster.get_stats())
