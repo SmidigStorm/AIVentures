@@ -3,10 +3,6 @@ from characterFactory import CharacterFactory
 from dice import Dice
 from monsterFactory import MonsterFactory
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 # CHARACTER #
 character_factory = CharacterFactory()
 
@@ -21,12 +17,6 @@ monster = monster_factory.create_monster("Baltazar", "Goblin", "ranger")
 print(monster.get_stats())
 
 
-# ROLL #
-#d4_roll = Dice.roll_d4()
-# Input to roll method should be 4, 6, 8, 20
-#print(f"1D4 Roll: {d4_roll}")
-#print(f"1D6 Roll: {Dice.roll_d6()}")
-
 # BATTLE #
 battle = Battle(character, monster)
 
@@ -35,7 +25,7 @@ for item in initiative_list:
     print(f"{item[0]} has an initiative roll of {item[1]}")
 
 winner = battle.run_battle() # FIGHT
-battle.end_battle(winner == "player") # Give out xp and levels to player if they won
+battle.end_battle(winner == "player") # Only give out xp and levels to player if they won
 print("---- AFTER BATTLE ----")
 print(character.get_stats())
 print(monster.get_stats())

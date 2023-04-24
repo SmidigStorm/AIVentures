@@ -2,9 +2,32 @@ x Character Creation
 x Race bonus and defaults
 x Dice roll
 x Monster creation
-Initiative (Who goes first)
-Combat (1 character vs 1 monster)
-Armour (minus vs an attack roll)
-Weapons (adds to an attack roll)
-Group (More than one monster)
+x Initiative (Who goes first)
+x Combat (1 character vs 1 monster)
+x Armour (minus vs an attack roll)
+  Level up (xp + add more stats?)
+  Weapons (adds to an attack roll)
+  Group (More than one monster)
+  Character Abilities: Design unique abilities for each character class, such as special attacks or spells.
+    Implement methods to use these abilities in battles and manage their resource costs (e.g., mana or energy).
+  Status Effects: Add conditions that can affect characters during battles, such as poison, paralysis, or buffs/debuffs.
+    Implement methods to apply, remove, and manage these effects.
+  Equipment: Introduce equipment items that can be worn by characters to enhance their abilities, such as armor, weapons, or accessories.
+    Implement methods to manage equipment inventory and equip/unequip items.
+  Advanced Combat System: Develop a more strategic combat system, which can involve implementing a turn-based or real-time system, positioning, or unique tactics for each character class or enemy type.
+
+
+Quick Wins in Existing Code:
+
+* Add input validation for user inputs in Character and Monster creation.
+* Implement error handling for unexpected inputs or exceptions in various methods.
+* Refactor repetitive code into separate methods for better readability and maintainability.
+* Add comments and docstrings to make the code easier to understand.
+
+Implementing Additional Game Mechanics:
+
+
+
+
+
 ?3
