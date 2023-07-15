@@ -13,7 +13,7 @@ x Armour (minus vs an attack roll)
   Status Effects: Add conditions that can affect characters during battles, such as poison, paralysis, or buffs/debuffs.
     Implement methods to apply, remove, and manage these effects.
   Equipment: Introduce equipment items that can be worn by characters to enhance their abilities, such as armor, weapons, or accessories.
-    Implement methods to manage equipment inventory and equip/unequip items.
+    Implement methods to manage equipment inventory and equip/un-equip items.
   Advanced Combat System: Develop a more strategic combat system, which can involve implementing a turn-based or real-time system, positioning, or unique tactics for each character class or enemy type.
 
 
@@ -22,12 +22,8 @@ Quick Wins in Existing Code:
 * Add input validation for user inputs in Character and Monster creation.
 * Implement error handling for unexpected inputs or exceptions in various methods.
 * Refactor repetitive code into separate methods for better readability and maintainability.
-* Add comments and docstrings to make the code easier to understand.
+* Create a text based interface for playing the game
+
 
 Implementing Additional Game Mechanics:
 
-
-
-
-
-?3
