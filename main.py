@@ -3,29 +3,41 @@ from characterFactory import CharacterFactory
 from dice import Dice
 from monsterFactory import MonsterFactory
 
-# CHARACTER #
-character_factory = CharacterFactory()
 
-print("---- BEFORE BATTLE ----")
-character = character_factory.create_character("Lazarus", "Elf", "Ranger")
-print(character.get_stats())
+def main():
+    # Setup: Create character, monster, and initial equipment
+    character_factory = CharacterFactory()
+    monster_factory = MonsterFactory()
 
-# MONSTER #
-monster_factory = MonsterFactory()
+    character = character_factory.create_character("Lazarus", "Elf", "ranger")
+    monster = monster_factory.create_monster("Baltazar", "Goblin", "ranger")
 
-monster = monster_factory.create_monster("Baltazar", "Goblin", "Ranger")
-print(monster.get_stats())
+    battle = Battle(character, monster)
+
+    # Main loop
+    while True:
+        print("\n---- Current State ----")
+        print(character.get_stats())
+        print(monster.get_stats())
+
+        # Get user input
+        command = input("\nWhat would you like to do? ")
+
+        # Process input
+        if command.lower() == "attack":
+            winner = battle.run_battle()
+            if winner == "player":
+                print("You have won the battle!")
+                battle.end_battle(winner == "player")
+            elif winner == "monster":
+                print("You have lost the battle...")
+                return
+        elif command.lower() == "quit":
+            print("Goodbye!")
+            return
+        else:
+            print("Invalid command. Please try again.")
 
 
-# BATTLE #
-battle = Battle(character, monster)
-
-initiative_list = battle.calculate_initiative()  # Who goes first
-for item in initiative_list:
-    print(f"{item[0]} has an initiative roll of {item[1]}")
-
-winner = battle.run_battle()  # FIGHT
-battle.end_battle(winner == "player")  # Only give out xp and levels to player if they won
-print("---- AFTER BATTLE ----")
-print(character.get_stats())
-print(monster.get_stats())
+if __name__ == "__main__":
+    main()
