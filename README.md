@@ -39,3 +39,4 @@ Done | Armor (minus vs an attack roll)
 * Armor Class (AC) - Does the hit actually land
 * Different armor types (light/medium/heavy)
 * Equipment slots
+* Durability
