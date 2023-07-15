@@ -26,4 +26,7 @@ Quick Wins in Existing Code:
 
 
 Implementing Additional Game Mechanics:
+Armour: Armor Class (AC) - Does the hit actually land
+        Different types (light/medium/heavy)
+        Equipment slots
 
