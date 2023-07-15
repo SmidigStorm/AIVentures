@@ -18,7 +18,7 @@ Done | Dice roll
 Done | Monster creation
 Done | Initiative (Who goes first)
 Done | Combat (1 character vs 1 monster)
-Done | Armour (minus vs an attack roll)
+Done | Armor (minus vs an attack roll)
  x | Level up (xp + add more stats?)
  x | Weapons (adds to an attack roll)
  x | Group (More than one monster)
@@ -35,7 +35,7 @@ Done | Armour (minus vs an attack roll)
 * Create a text based interface for playing the game
 
 
-Implementing Additional Game Mechanics:
-* Armour: Armor Class (AC) - Does the hit actually land
-        Different types (light/medium/heavy)
-        Equipment slots
+### Implementing Additional Game Mechanics ###
+* Armor Class (AC) - Does the hit actually land
+* Different armor types (light/medium/heavy)
+* Equipment slots
