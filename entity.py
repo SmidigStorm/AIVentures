@@ -1,3 +1,4 @@
+from armor import Armor
 from equipmentType import EquipmentType
 class Entity:
     def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
@@ -65,3 +66,10 @@ class Entity:
         self.intelligence += factor * item.intelligence
         self.wisdom += factor * item.wisdom
         self.charisma += factor * item.charisma
+
+    def calculate_armor_class(self):
+        ac = 10  # Start with base armor class (AC)
+        for equipment in self.equipment.values():
+            if isinstance(equipment, Armor):
+                ac += equipment.get_ac_bonus()
+        return ac
