@@ -19,13 +19,13 @@ Done | Monster creation
 Done | Initiative (Who goes first)
 Done | Combat (1 character vs 1 monster)
 Done | Armour (minus vs an attack roll)
- - | Level up (xp + add more stats?)
- - | Weapons (adds to an attack roll)
- - | Group (More than one monster)
- - | Character Abilities: Design unique abilities for each character class, such as special attacks or spells. _Implement methods to use these abilities in battles and manage their resource costs (e.g., mana or energy)_
- - | Status Effects: Add conditions that can affect characters during battles, such as poison, paralysis, or buffs/debuffs. _Implement methods to apply, remove, and manage these effects_
- - | Equipment: Introduce equipment items that can be worn by characters to enhance their abilities, such as armor, weapons, or accessories. _Implement methods to manage equipment inventory and equip/un-equip items_
- - | Advanced Combat System: Develop a more strategic combat system, which can involve implementing a turn-based or real-time system, positioning, or unique tactics for each character class or enemy type.
+ x | Level up (xp + add more stats?)
+ x | Weapons (adds to an attack roll)
+ x | Group (More than one monster)
+ x | Character Abilities: Design unique abilities for each character class, such as special attacks or spells. _Implement methods to use these abilities in battles and manage their resource costs (e.g., mana or energy)_
+ x | Status Effects: Add conditions that can affect characters during battles, such as poison, paralysis, or buffs/debuffs. _Implement methods to apply, remove, and manage these effects_
+ x | Equipment: Introduce equipment items that can be worn by characters to enhance their abilities, such as armor, weapons, or accessories. _Implement methods to manage equipment inventory and equip/un-equip items_
+ x | Advanced Combat System: Develop a more strategic combat system, which can involve implementing a turn-based or real-time system, positioning, or unique tactics for each character class or enemy type.
 
 ## Quick Wins in Existing Code ##
 
