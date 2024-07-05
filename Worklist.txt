@@ -5,6 +5,7 @@ x Monster creation
 x Initiative (Who goes first)
 x Combat (1 character vs 1 monster)
 x Armour (minus vs an attack roll)
+  Add GameState for quick access and control of state
   Level up (xp + add more stats?)
   Weapons (adds to an attack roll)
   Group (More than one monster)

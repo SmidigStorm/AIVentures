@@ -1,5 +1,4 @@
-from character import Character
-from monster import Monster
+from random import random
 from dice import Dice
 class Battle:
     def __init__(self, character, monster):
@@ -12,6 +11,25 @@ class Battle:
         initiative.append((self.monster.name, self.monster.dexterity + Dice.roll_d20()))
         initiative.sort(key=lambda x: x[1], reverse=True)
         return initiative
+
+## turn from Claude AI
+    def player_turn(self):
+        print(f"\n{self.character.name}'s turn!")
+        action = input("Do you want to (a)ttack or (d)efend? ").lower()
+        if action == 'a':
+            self.player_attack()
+        elif action == 'd':
+            self.player_defend()
+        else:
+            print("Invalid action. Defending by default.")
+            self.player_defend()
+## -----
+    def monster_turn(self):
+        print(f"\n{self.monster.name}'s turn!")
+        if random.random() < 0.8:  # 80% chance to attack
+            self.monster_attack()
+        else:
+            self.monster_defend()
 
     def player_attack(self):
         attack_roll = self.character.strength + Dice.roll_d20()

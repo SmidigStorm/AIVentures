@@ -1,4 +1,4 @@
-from equipmentType import EquipmentType
+
 class Equipment:
     def __init__(self, name, equipment_type, stat_bonuses):
         self.name = name
