@@ -23,10 +23,8 @@ def main():
         if command.lower() == "attack":
             winner = battle.run_battle()
             if winner == "player":
-                print("You have won the battle!")
                 battle.end_battle(winner == "player")
                 gamestate.monster_kills += 1
-                print(gamestate.monster_kills)
             elif winner == "monster":
                 print("You have lost the battle...")
                 return
