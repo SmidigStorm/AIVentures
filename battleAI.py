@@ -18,15 +18,44 @@ class Battle:
     def player_turn(self):
         print(f"\n{self.character.name}'s turn!")
         while True:
-            action = input("Do you want to (a)ttack, (d)efend, or use a (s)pecial ability? ").lower()
+            action = input("Do you want to (a)ttack, (d)efend, (u)se an item, or use a (s)pecial ability? ").lower()
             if action == 'a':
                 return self.player_attack()
             elif action == 'd':
                 return self.player_defend()
+            elif action == 'u':
+                return self.player_use_item()
             elif action == 's':
                 return self.player_special_ability()
             else:
-                print("Invalid action. Please choose 'a', 'd', or 's'.")
+                print("Invalid action. Please choose 'a', 'd', 'u', or 's'.")
+
+    def player_use_item(self):
+        usable_items = self.character.get_usable_items()
+        if not usable_items:
+            print("You have no usable items!")
+            return self.player_turn()
+
+        print("Available items:")
+        for i, item in enumerate(usable_items):
+            print(f"{i + 1}. {item.name} - {item.description}")
+
+        while True:
+            choice = input("Choose an item to use (or 'c' to cancel): ")
+            if choice.lower() == 'c':
+                return self.player_turn()
+            try:
+                item_index = int(choice) - 1
+                if 0 <= item_index < len(usable_items):
+                    chosen_item = usable_items[item_index]
+                    if self.character.use_item(chosen_item):
+                        return "use_item", chosen_item.name
+                    else:
+                        print("Failed to use the item. Please try again.")
+                else:
+                    print("Invalid item number. Please try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number or 'c' to cancel.")
 
     def monster_turn(self):
         print(f"\n{self.monster.name}'s turn!")
@@ -99,7 +128,9 @@ class Battle:
 
             for name, _ in initiative:
                 if name == self.character.name:
-                    self.player_turn()
+                    action = self.player_turn()
+                    if action[0] == "use_item":
+                        print(f"{self.character.name} used {action[1]}!")
                 else:
                     self.monster_turn()
 

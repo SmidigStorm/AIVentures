@@ -5,8 +5,10 @@ class Character(Entity):
                  hit_points, armor_class, damage_reduction):
         super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
         self.hit_points = hit_points
+        self.max_hit_points = hit_points
         self.armor_class = armor_class
         self.damage_reduction = damage_reduction
+        self.inventory = []
 
     def assign_stats(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
         self.strength = strength
@@ -22,6 +24,20 @@ class Character(Entity):
 
     def add_item(self, item):
         self.inventory.append(item)
+
+    def remove_item(self, item):
+        if item in self.inventory:
+            self.inventory.remove(item)
+
+    def use_item(self, item):
+        if item in self.inventory:
+            item.use(self)
+            self.remove_item(item)
+            return True
+        return False
+
+    def get_usable_items(self):
+        return [item for item in self.inventory if item.is_usable_in_battle]
 
     def level_up(self):
         self.level += 1

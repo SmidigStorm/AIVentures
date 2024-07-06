@@ -17,10 +17,10 @@ def main():
         print(gamestate.monster.get_stats())
 
         # Get user input
-        command = input("\nWhat would you like to do? (attack/quit): ")
+        command = input("\nWhat would you like to do? (a)ttack or (q)uit: ")
 
         # Process input
-        if command.lower() == "attack":
+        if command.lower() == "a":
             winner = battle.run_battle()
             if winner == "player":
                 battle.end_battle(winner == "player")
@@ -28,7 +28,7 @@ def main():
             elif winner == "monster":
                 print("You have lost the battle...")
                 return
-        elif command.lower() == "quit":
+        elif command.lower() == "q":
             print("Goodbye!")
             return
         else:
