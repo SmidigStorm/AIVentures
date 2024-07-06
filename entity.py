@@ -15,8 +15,44 @@ class Entity:
         self.inventory = []
         self.level = 1
         self.xp = 0
-        XP_TABLE = [0, 100, 300, 600, 1000, 1500, 2100, 2800, 3600, 4500]  # Example XP table
+        self.max_hit_points = 0
+        self.current_hit_points = 0
+        self.armor_class = 10
+        self.damage_reduction = 0
         self.equipment = {eq_type: None for eq_type in EquipmentType}
+
+    def get_stats(self):
+        stats = (
+            f"Name: {self.name}\n"
+            f"Race: {self.race}\n"
+            f"Class: {self.class_name}\n"
+            f"Strength: {self.strength}\n"
+            f"Dexterity: {self.dexterity}\n"
+            f"Constitution: {self.constitution}\n"
+            f"Intelligence: {self.intelligence}\n"
+            f"Wisdom: {self.wisdom}\n"
+            f"Charisma: {self.charisma}\n"
+            f"Skills: {self.skills}\n"
+            f"Inventory: {[item.name for item in self.inventory]}\n"
+            f"Level: {self.level}\n"
+            f"Experience Points: {self.xp}\n"
+            f"Hit Points: {self.current_hit_points}/{self.max_hit_points}\n"
+            f"Armor Class: {self.armor_class}\n"
+            f"Damage Reduction: {self.damage_reduction}\n"
+        )
+        return stats
+
+    def heal(self, amount):
+        self.current_hit_points = min(self.max_hit_points, self.current_hit_points + amount)
+        return amount
+
+    def take_damage(self, amount):
+        actual_damage = max(0, amount - self.damage_reduction)
+        self.current_hit_points = max(0, self.current_hit_points - actual_damage)
+        return actual_damage
+
+    def is_alive(self):
+        return self.current_hit_points > 0
 
     def roll_stats(self):
         # Code to roll for stats
@@ -73,3 +109,4 @@ class Entity:
             if isinstance(equipment, Armor):
                 ac += equipment.get_ac_bonus()
         return ac
+

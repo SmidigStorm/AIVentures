@@ -4,8 +4,8 @@ class Character(Entity):
     def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma,
                  hit_points, armor_class, damage_reduction):
         super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
-        self.hit_points = hit_points
         self.max_hit_points = hit_points
+        self.current_hit_points = hit_points
         self.armor_class = armor_class
         self.damage_reduction = damage_reduction
         self.inventory = []
@@ -45,23 +45,19 @@ class Character(Entity):
     def gain_xp(self, xp):
         self.xp += xp
 
+    def heal(self, amount):
+        self.current_hit_points = min(self.max_hit_points, self.current_hit_points + amount)
+        return amount
+
+    def take_damage(self, amount):
+        actual_damage = max(0, amount - self.damage_reduction)
+        self.current_hit_points = max(0, self.current_hit_points - actual_damage)
+        return actual_damage
+
+    def is_alive(self):
+        return self.current_hit_points > 0
+
     def get_stats(self):
-        stats = (
-            f"Name: {self.name}\n"
-            f"Race: {self.race}\n"
-            f"Class: {self.class_name}\n"
-            f"Strength: {self.strength}\n"
-            f"Dexterity: {self.dexterity}\n"
-            f"Constitution: {self.constitution}\n"
-            f"Intelligence: {self.intelligence}\n"
-            f"Wisdom: {self.wisdom}\n"
-            f"Charisma: {self.charisma}\n"
-            f"Skills: {self.skills}\n"
-            f"Inventory: {self.inventory}\n"
-            f"Level: {self.level}\n"
-            f"Experience Points: {self.xp}\n"
-            f"Hit Points: {self.hit_points}\n"
-            f"Armor Class: {self.armor_class}\n"
-            f"Damage Reduction: {self.damage_reduction}\n"
-        )
+        stats = super().get_stats()
+        stats += f"Current Hit Points: {self.current_hit_points}/{self.max_hit_points}\n"
         return stats

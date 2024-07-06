@@ -70,23 +70,23 @@ class Battle:
         attack_roll = self.character.strength + Dice.roll_d20()
         if attack_roll >= self.monster.armor_class:
             damage_dealt = max(1, Dice.roll_d6() + self.character.strength - self.monster.damage_reduction)
-            self.monster.hit_points -= damage_dealt
-            print(f"{self.character.name} hit {self.monster.name} for {damage_dealt} damage!")
+            actual_damage = self.monster.take_damage(damage_dealt)
+            print(f"{self.character.name} hit {self.monster.name} for {actual_damage} damage!")
         else:
-            damage_dealt = 0
+            actual_damage = 0
             print(f"{self.character.name}'s attack missed!")
-        return attack_roll, damage_dealt
+        return attack_roll, actual_damage
 
     def monster_attack(self):
         attack_roll = self.monster.strength + Dice.roll_d20()
         if attack_roll >= self.character.armor_class:
             damage_dealt = max(1, Dice.roll_d6() + self.monster.strength - self.character.damage_reduction)
-            self.character.hit_points -= damage_dealt
-            print(f"{self.monster.name} hit {self.character.name} for {damage_dealt} damage!")
+            actual_damage = self.character.take_damage(damage_dealt)
+            print(f"{self.monster.name} hit {self.character.name} for {actual_damage} damage!")
         else:
-            damage_dealt = 0
+            actual_damage = 0
             print(f"{self.monster.name}'s attack missed!")
-        return attack_roll, damage_dealt
+        return attack_roll, actual_damage
 
     def player_defend(self):
         defense_bonus = Dice.roll_d4()
@@ -111,9 +111,9 @@ class Battle:
         return "special", 0
 
     def check_victory(self):
-        if self.character.hit_points <= 0:
+        if not self.character.is_alive():
             return self.monster.name
-        elif self.monster.hit_points <= 0:
+        elif not self.monster.is_alive():
             return self.character.name
         else:
             return None
@@ -125,6 +125,8 @@ class Battle:
         while True:
             self.round_count += 1
             print(f"\n--- Round {self.round_count} ---")
+            print(f"{self.character.name}'s HP: {self.character.current_hit_points}/{self.character.max_hit_points}")
+            print(f"{self.monster.name}'s HP: {self.monster.current_hit_points}/{self.monster.max_hit_points}")
 
             for name, _ in initiative:
                 if name == self.character.name:
