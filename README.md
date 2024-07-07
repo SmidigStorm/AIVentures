@@ -19,6 +19,7 @@ Done | Monster creation
 Done | Initiative (Who goes first)
 Done | Combat (1 character vs 1 monster)
 Done | Armor (minus vs an attack roll)
+Done | Turns
  x | Level up (xp + add more stats?)
  x | Weapons (adds to an attack roll)
  x | Group (More than one monster)
