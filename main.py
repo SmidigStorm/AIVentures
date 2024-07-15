@@ -2,13 +2,16 @@ from GameState import GameState
 from battleAI import Battle
 from characterFactory import CharacterFactory
 from monsterFactory import MonsterFactory
-
+from charactercreator import CharacterCreator
 
 def main():
-    # Initial setup state
-    gamestate = GameState(CharacterFactory, MonsterFactory)
-    battle = Battle(gamestate.character, gamestate.monster)
+    # Create character using CharacterCreator
+    creator = CharacterCreator()
+    player_character = creator.create_character()
 
+    # Initial setup state
+    gamestate = GameState(player_character, MonsterFactory)
+    battle = Battle(gamestate.character, gamestate.monster)
 
     # Main loop
     while True:
@@ -33,7 +36,6 @@ def main():
             return
         else:
             print("Invalid command. Please try again.")
-
 
 if __name__ == "__main__":
     main()
