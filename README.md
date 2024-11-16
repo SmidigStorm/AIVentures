@@ -20,7 +20,7 @@ Done | Initiative (Who goes first)
 Done | Combat (1 character vs 1 monster)
 Done | Armor (minus vs an attack roll)
 Done | Turns
- x | Level up (xp + add more stats?)
+Done | Level up (xp + add more stats?)
  x | Weapons (adds to an attack roll)
  x | Group (More than one monster)
  x | Character Abilities: Design unique abilities for each character class, such as special attacks or spells. _Implement methods to use these abilities in battles and manage their resource costs (e.g., mana or energy)_
@@ -33,7 +33,7 @@ Done | Turns
 * Add input validation for user inputs in Character and Monster creation.
 * Implement error handling for unexpected inputs or exceptions in various methods.
 * Refactor repetitive code into separate methods for better readability and maintainability.
-* Create a text based interface for playing the game
+Done | Create a text based interface for playing the game
 
 
 ### Implementing Additional Game Mechanics ###

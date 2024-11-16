@@ -6,11 +6,11 @@ class CharacterCreator:
     def __init__(self):
         self.character_factory = CharacterFactory()
 
-        with open("races.json") as f:
-            self.races = json.load(f)
+        with open("races.json") as jsonfile:
+            self.races = json.load(jsonfile)
 
-        with open("classes.json") as f:
-            self.classes = json.load(f)
+        with open("classes.json") as jsonfile:
+            self.classes = json.load(jsonfile)
 
     def create_character(self):
         name = self.get_character_name()
