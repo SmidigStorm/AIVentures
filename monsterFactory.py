@@ -10,9 +10,14 @@ class MonsterFactory:
     def create_monster(self, name, race, class_name):
         race_stats = self.races[race]
 
-        m = Monster(name, race, class_name, race_stats["Strength"], race_stats["Dexterity"],
-                              race_stats["Constitution"], race_stats["Intelligence"],
-                              race_stats["Wisdom"], race_stats["Charisma"], 10, 2, 0)
-        # name, race, class_name, strength, dexterity,
-        # constitution, intelligence, wisdom, charisma, hit_points, armor_class, damage_reduction
+        m = Monster(name, race, class_name,
+                   race_stats["Strength"],
+                   race_stats["Dexterity"],
+                   race_stats["Constitution"],
+                   race_stats["Intelligence"],
+                   race_stats["Wisdom"],
+                   race_stats["Charisma"],
+                   hit_points=10,
+                   base_ac=race_stats["base_ac"],
+                   damage_reduction=0)
         return m
