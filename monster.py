@@ -10,9 +10,8 @@ class Monster(Entity):
         self.damage_reduction = damage_reduction
 
     def take_damage(self, amount):
-        actual_damage = max(0, amount - self.damage_reduction)
-        self.current_hit_points = max(0, self.current_hit_points - actual_damage)
-        return actual_damage
+        self.current_hit_points = max(0, self.current_hit_points - amount)
+        return amount
 
     def is_alive(self):
         return self.current_hit_points > 0

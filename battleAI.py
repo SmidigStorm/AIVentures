@@ -68,8 +68,10 @@ class Battle:
 
     def player_attack(self):
         attack_roll = self.character.strength + Dice.roll_d20()
+        print(f"{self.character.name} rolls {attack_roll} to hit against AC {self.monster.armor_class}")
+
         if attack_roll >= self.monster.armor_class:
-            damage_dealt = max(1, Dice.roll_d6() + self.character.strength - self.monster.damage_reduction)
+            damage_dealt = max(1, Dice.roll_d6() + self.character.strength)
             actual_damage = self.monster.take_damage(damage_dealt)
             print(f"{self.character.name} hit {self.monster.name} for {actual_damage} damage!")
         else:
@@ -79,8 +81,10 @@ class Battle:
 
     def monster_attack(self):
         attack_roll = self.monster.strength + Dice.roll_d20()
+        print(f"{self.monster.name} rolls {attack_roll} to hit against AC {self.character.armor_class}")
+
         if attack_roll >= self.character.armor_class:
-            damage_dealt = max(1, Dice.roll_d6() + self.monster.strength - self.character.damage_reduction)
+            damage_dealt = max(1, Dice.roll_d6() + self.monster.strength)
             actual_damage = self.character.take_damage(damage_dealt)
             print(f"{self.monster.name} hit {self.character.name} for {actual_damage} damage!")
         else:
