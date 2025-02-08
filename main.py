@@ -11,7 +11,7 @@ def main():
 
     # Initial setup state
     gamestate = GameState(player_character, MonsterFactory)
-    battle = Battle(gamestate.character, gamestate.monster)
+
 
     # Main loop
     while True:
@@ -24,12 +24,15 @@ def main():
 
         # Process input
         if command.lower() == "a":
+            battle = Battle(gamestate.character, gamestate.monster)
             winner = battle.run_battle()
+
             if winner == "player":
-                battle.end_battle(winner == "player")
+                print(f"Victory! You defeated {gamestate.monster.name}!")
                 gamestate.monster_kills += 1
+                return
             elif winner == "monster":
-                print("You have lost the battle...")
+                print(f"Game Over! {gamestate.character.name} has been defeated...")
                 return
         elif command.lower() == "q":
             print("Goodbye!")
