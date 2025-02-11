@@ -1,0 +1,127 @@
+{
+    "light_armor": {
+        "Padded": {
+            "category": "Light",
+            "base_ac": 11,
+            "cost_gp": 5,
+            "weight": 8,
+            "strength_requirement": 0,
+            "stealth_disadvantage": true,
+            "description": "Padded armor consists of quilted layers of cloth and batting."
+        },
+        "Leather": {
+            "category": "Light",
+            "base_ac": 11,
+            "cost_gp": 10,
+            "weight": 10,
+            "strength_requirement": 0,
+            "stealth_disadvantage": false,
+            "description": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil."
+        },
+        "Studded Leather": {
+            "category": "Light",
+            "base_ac": 12,
+            "cost_gp": 45,
+            "weight": 13,
+            "strength_requirement": 0,
+            "stealth_disadvantage": false,
+            "description": "Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes."
+        }
+    },
+    "medium_armor": {
+        "Hide": {
+            "category": "Medium",
+            "base_ac": 12,
+            "cost_gp": 10,
+            "weight": 12,
+            "strength_requirement": 0,
+            "stealth_disadvantage": false,
+            "description": "This crude armor consists of thick furs and pelts."
+        },
+        "Chain Shirt": {
+            "category": "Medium",
+            "base_ac": 13,
+            "cost_gp": 50,
+            "weight": 20,
+            "strength_requirement": 0,
+            "stealth_disadvantage": false,
+            "description": "Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather."
+        },
+        "Scale Mail": {
+            "category": "Medium",
+            "base_ac": 14,
+            "cost_gp": 50,
+            "weight": 45,
+            "strength_requirement": 0,
+            "stealth_disadvantage": true,
+            "description": "This armor consists of a coat and leggings of leather covered with overlapping pieces of metal, much like the scales of a fish."
+        },
+        "Breastplate": {
+            "category": "Medium",
+            "base_ac": 14,
+            "cost_gp": 400,
+            "weight": 20,
+            "strength_requirement": 0,
+            "stealth_disadvantage": false,
+            "description": "This armor consists of a fitted metal chest piece worn with supple leather."
+        },
+        "Half Plate": {
+            "category": "Medium",
+            "base_ac": 15,
+            "cost_gp": 750,
+            "weight": 40,
+            "strength_requirement": 0,
+            "stealth_disadvantage": true,
+            "description": "Half plate consists of shaped metal plates that cover most of the wearer's body."
+        }
+    },
+    "heavy_armor": {
+        "Ring Mail": {
+            "category": "Heavy",
+            "base_ac": 14,
+            "cost_gp": 30,
+            "weight": 40,
+            "strength_requirement": 0,
+            "stealth_disadvantage": true,
+            "description": "This armor is leather armor with heavy rings sewn into it."
+        },
+        "Chain Mail": {
+            "category": "Heavy",
+            "base_ac": 16,
+            "cost_gp": 75,
+            "weight": 55,
+            "strength_requirement": 13,
+            "stealth_disadvantage": true,
+            "description": "Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath to prevent chafing and cushion the impact of blows."
+        },
+        "Splint": {
+            "category": "Heavy",
+            "base_ac": 17,
+            "cost_gp": 200,
+            "weight": 60,
+            "strength_requirement": 15,
+            "stealth_disadvantage": true,
+            "description": "This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding."
+        },
+        "Plate": {
+            "category": "Heavy",
+            "base_ac": 18,
+            "cost_gp": 1500,
+            "weight": 65,
+            "strength_requirement": 15,
+            "stealth_disadvantage": true,
+            "description": "Plate consists of shaped, interlocking metal plates to cover the entire body."
+        }
+    },
+    "shields": {
+        "Shield": {
+            "category": "Shield",
+            "base_ac": 2,
+            "cost_gp": 10,
+            "weight": 6,
+            "strength_requirement": 0,
+            "stealth_disadvantage": false,
+            "description": "A shield is made from wood or metal and is carried in one hand."
+        }
+    }
+}
