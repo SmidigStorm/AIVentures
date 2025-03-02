@@ -21,6 +21,8 @@ Done | Combat (1 character vs 1 monster)
 Done | Armor (minus vs an attack roll)
 Done | Turns
 Done | Level up (xp + add more stats?)
+Done | Armor Class (AC) - Does the hit actually land (hit calculation)
+Done | Initial Hit points calculated based on class (con + class modifier)
  x | Weapons (adds to an attack roll)
  x | Group (More than one monster)
  x | Character Abilities: Design unique abilities for each character class, such as special attacks or spells. _Implement methods to use these abilities in battles and manage their resource costs (e.g., mana or energy)_
@@ -29,8 +31,6 @@ Done | Level up (xp + add more stats?)
  x | Advanced Combat System: Develop a more strategic combat system, which can involve implementing a turn-based or real-time system, positioning, or unique tactics for each character class or enemy type.
 
 ## Quick Wins in Existing Code ##
-
-* Add input validation for user inputs in Character and Monster creation.
 * Implement error handling for unexpected inputs or exceptions in various methods.
 * Refactor repetitive code into separate methods for better readability and maintainability.
 Done | Create a text based interface for playing the game
