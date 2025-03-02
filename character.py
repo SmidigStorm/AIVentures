@@ -1,3 +1,4 @@
+from dice import Dice
 from entity import Entity
 
 class Character(Entity):
@@ -13,7 +14,7 @@ class Character(Entity):
         self.level = 1
         self.xp = 0
         self.xp_to_next_level = self.calculate_xp_to_next_level()
-
+        self.hit_die = 8  # Default hit die, will be overridden by CharacterFactory
 
     def assign_stats(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
         self.strength = strength
@@ -74,7 +75,7 @@ class Character(Entity):
         self.xp -= self.xp_to_next_level
         self.xp_to_next_level = self.calculate_xp_to_next_level()
 
-        # Increase stats
+        # Increase stats - Can be changed later to be class specific
         self.strength += Dice.roll_d4()
         self.dexterity += Dice.roll_d4()
         self.constitution += Dice.roll_d4()
@@ -82,14 +83,36 @@ class Character(Entity):
         self.wisdom += Dice.roll_d4()
         self.charisma += Dice.roll_d4()
 
-        # Increase hit points
-        hit_points_increase = Dice.roll_d8() + self.get_constitution_modifier()
-        self.max_hit_points += hit_points_increase
-        self.current_hit_points += hit_points_increase
+        # Update constitution modifier as it might have changed
+        con_modifier = self.get_constitution_modifier()
+
+        # Increase hit points based on character's hit die and constitution modifier
+        hit_points_increase = self.roll_hit_die() + con_modifier
+
+        # Ensure at least 1 hit point gained per level
+        hit_points_increase = max(1, hit_points_increase)
+
+        # Increase hit points - old way of calculating based on a d8 die for all classes
+        #hit_points_increase = Dice.roll_d8() + self.get_constitution_modifier()
+        #self.max_hit_points += hit_points_increase
+        #self.current_hit_points += hit_points_increase
 
         print(f"{self.name} has leveled up to level {self.level}!")
         print(f"Hit Points increased by {hit_points_increase}")
         print("All attributes have increased!")
+
+    def roll_hit_die(self):
+        if self.hit_die == 6:
+            return Dice.roll_d6()
+        elif self.hit_die == 8:
+            return Dice.roll_d8()
+        elif self.hit_die == 10:
+            return Dice.roll_d10()
+        elif self.hit_die == 12:
+            return Dice.roll_d12()
+        else:
+            # Default to d8 if something went wrong
+            return Dice.roll_d8()
 
     def get_constitution_modifier(self):
         return (self.constitution - 10) // 2
@@ -99,6 +122,7 @@ class Character(Entity):
         stats += f"Level: {self.level}\n"
         stats += f"XP: {self.xp}/{self.xp_to_next_level}\n"
         stats += f"Current Hit Points: {self.current_hit_points}/{self.max_hit_points}\n"
+        stats += f"Hit Die: d{self.hit_die}\n"
         return stats
 
     def heal(self, amount):

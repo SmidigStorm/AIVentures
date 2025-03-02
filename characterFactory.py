@@ -1,5 +1,6 @@
 import json
 from character import Character
+from dice import Dice
 
 
 class CharacterFactory:
@@ -10,30 +11,59 @@ class CharacterFactory:
         with open("races_default_values.json") as default_values_file:
             self.races_defaults = json.load(default_values_file)
 
+        with open("classes_properties.json") as classes_file:
+            self.classes_properties = json.load(classes_file)
+
     def create_character(self, name, race, class_name):
         race_stats = self.races[race]
         race_default_values = self.races_defaults[race]
 
+        # Get class hit die (or default to 8 if not found)
+        hit_die = self.classes_properties.get(class_name, {}).get("hit_die", 8)
+
+        # Set base attributes
+        strength = race_default_values["strength"] + race_stats["strength_bonus"]
+        dexterity = race_default_values["dexterity"] + race_stats["dexterity_bonus"]
+        constitution = race_default_values["constitution"] + race_stats["constitution_bonus"]
+        intelligence = race_default_values["intelligence"] + race_stats["intelligence_bonus"]
+        wisdom = race_default_values["wisdom"] + race_stats["wisdom_bonus"]
+        charisma = race_default_values["charisma"] + race_stats["charisma_bonus"]
+
+        # Create character
         character = Character(
             name=name,
             race=race,
             class_name=class_name,
-            strength=race_default_values["strength"] + race_stats["strength_bonus"],
-            dexterity=race_default_values["dexterity"] + race_stats["dexterity_bonus"],
-            constitution=race_default_values["constitution"] + race_stats["constitution_bonus"],
-            intelligence=race_default_values["intelligence"] + race_stats["intelligence_bonus"],
-            wisdom=race_default_values["wisdom"] + race_stats["wisdom_bonus"],
-            charisma=race_default_values["charisma"] + race_stats["charisma_bonus"],
-            hit_points=10,
+            strength=strength,
+            dexterity=dexterity,
+            constitution=constitution,
+            intelligence=intelligence,
+            wisdom=wisdom,
+            charisma=charisma,
+            hit_points=0,  # Will be calculated in initialize_hit_points
             base_ac=race_default_values["base_ac"],
             damage_reduction=0
         )
+
+        # Initialize hit points based on class hit die and constitution modifier
+        self.initialize_hit_points(character, hit_die)
+
         return character
 
-# 1d6: 4 rolls remove lowest, choose BEST one. Instead of default
-# Start on 8 on all stats, then use allocation points
-# 15, 14, 13, 12, 10, 8 as default values, then add race and then class.
+    def initialize_hit_points(self, character, hit_die):
+        # Calculate constitution modifier
+        con_modifier = (character.constitution - 10) // 2
 
-# RACE -> CLASS -> Character
-# Equipment -> Weapon -> Dagger
-# Equipment -> Armour ->
+        # First level characters get maximum hit die value + con modifier
+        max_hit_die_value = hit_die
+        initial_hit_points = max_hit_die_value + con_modifier
+
+        # Ensure minimum of 1 hit point
+        initial_hit_points = max(1, initial_hit_points)
+
+        # Set hit points
+        character.max_hit_points = initial_hit_points
+        character.current_hit_points = initial_hit_points
+
+        # Store the hit die for future level ups
+        character.hit_die = hit_die

@@ -1,0 +1,62 @@
+{
+    "Fighter": {
+        "hit_die": 10,
+        "primary_ability": "Strength",
+        "saving_throw_proficiencies": ["Strength", "Constitution"]
+    },
+    "Wizard": {
+        "hit_die": 6,
+        "primary_ability": "Intelligence",
+        "saving_throw_proficiencies": ["Intelligence", "Wisdom"]
+    },
+    "Rogue": {
+        "hit_die": 8,
+        "primary_ability": "Dexterity",
+        "saving_throw_proficiencies": ["Dexterity", "Intelligence"]
+    },
+    "Cleric": {
+        "hit_die": 8,
+        "primary_ability": "Wisdom",
+        "saving_throw_proficiencies": ["Wisdom", "Charisma"]
+    },
+    "Paladin": {
+        "hit_die": 10,
+        "primary_ability": "Strength",
+        "saving_throw_proficiencies": ["Wisdom", "Charisma"]
+    },
+    "Ranger": {
+        "hit_die": 10,
+        "primary_ability": "Dexterity",
+        "saving_throw_proficiencies": ["Strength", "Dexterity"]
+    },
+    "Barbarian": {
+        "hit_die": 12,
+        "primary_ability": "Strength",
+        "saving_throw_proficiencies": ["Strength", "Constitution"]
+    },
+    "Bard": {
+        "hit_die": 8,
+        "primary_ability": "Charisma",
+        "saving_throw_proficiencies": ["Dexterity", "Charisma"]
+    },
+    "Druid": {
+        "hit_die": 8,
+        "primary_ability": "Wisdom",
+        "saving_throw_proficiencies": ["Intelligence", "Wisdom"]
+    },
+    "Monk": {
+        "hit_die": 8,
+        "primary_ability": "Dexterity",
+        "saving_throw_proficiencies": ["Strength", "Dexterity"]
+    },
+    "Sorcerer": {
+        "hit_die": 6,
+        "primary_ability": "Charisma",
+        "saving_throw_proficiencies": ["Constitution", "Charisma"]
+    },
+    "Warlock": {
+        "hit_die": 8,
+        "primary_ability": "Charisma",
+        "saving_throw_proficiencies": ["Wisdom", "Charisma"]
+    }
+}
