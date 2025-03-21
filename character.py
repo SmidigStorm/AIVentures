@@ -62,7 +62,7 @@ class Character(Entity):
         return [item for item in self.inventory if item.is_usable_in_battle]
 
     def calculate_xp_to_next_level(self):
-        return self.level * 1000  # Simple calculation, can be adjusted for balance
+        return self.level * 150  # Simple calculation, can be adjusted for balance
 
     def gain_xp(self, xp):
         self.xp += xp
