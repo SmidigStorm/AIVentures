@@ -1,5 +1,7 @@
 from dice import Dice
 from entity import Entity
+from items import HealingPotion
+
 
 class Character(Entity):
     def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma,
@@ -53,9 +55,12 @@ class Character(Entity):
 
     def use_item(self, item):
         if item in self.inventory:
-            item.use(self)
-            self.remove_item(item)
-            return True
+            if isinstance(item, HealingPotion):
+                item.use(self)
+                self.heal(item.healing_amount)
+                self.remove_item(item)
+                return True
+
         return False
 
     def get_usable_items(self):
