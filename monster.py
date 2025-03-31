@@ -2,13 +2,14 @@ from entity import Entity
 
 class Monster(Entity):
     def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma,
-                 hit_points, base_ac, damage_reduction):
+                 hit_points, base_ac, damage_reduction, monster_level):
         super().__init__(name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma)
         self.max_hit_points = hit_points
         self.current_hit_points = hit_points
         self.base_ac = base_ac  # Store the base AC from race
         self.armor_class = self.calculate_total_ac()  # Calculate total AC including dex modifier
         self.damage_reduction = damage_reduction
+        self.level = monster_level
 
     def calculate_dexterity_modifier(self):
         """Calculate the Dexterity modifier using D&D 5e rules"""
