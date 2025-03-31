@@ -97,6 +97,8 @@ class Character(Entity):
         # Ensure at least 1 hit point gained per level
         hit_points_increase = max(1, hit_points_increase)
 
+        self.max_hit_points += hit_points_increase
+
         # Increase hit points - old way of calculating based on a d8 die for all classes
         #hit_points_increase = Dice.roll_d8() + self.get_constitution_modifier()
         #self.max_hit_points += hit_points_increase

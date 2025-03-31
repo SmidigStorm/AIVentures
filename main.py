@@ -7,14 +7,15 @@ from charactercreator import CharacterCreator
 def main():
     # Create character using CharacterCreator
     creator = CharacterCreator()
-    player_character = creator.create_character()
-
+    player = creator.create_character()
 
     # Main loop
     playing = True
     while playing:
         print("\n---- Current State ----")
-        gamestate = GameState(player_character, MonsterFactory)
+        gamestate = GameState(player, MonsterFactory)
+        gamestate.monster.level = gamestate.character.level
+
         print(gamestate.character.get_stats())
         print(gamestate.monster.get_stats())
 
