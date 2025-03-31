@@ -124,8 +124,8 @@ class Character(Entity):
 
     def get_stats(self):
         stats = super().get_stats()
-        stats += f"Level: {self.level}\n"
-        stats += f"XP: {self.xp}/{self.xp_to_next_level}\n"
+        stats += f"Level: {self.level} "
+        stats += f"XP: {self.xp}/{self.xp_to_next_level} "
         stats += f"Current Hit Points: {self.current_hit_points}/{self.max_hit_points}\n"
         stats += f"Hit Die: d{self.hit_die}\n"
         return stats

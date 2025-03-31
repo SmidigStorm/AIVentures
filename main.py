@@ -9,13 +9,12 @@ def main():
     creator = CharacterCreator()
     player_character = creator.create_character()
 
-    # Initial setup state
-    gamestate = GameState(player_character, MonsterFactory)
-
 
     # Main loop
-    while True:
+    playing = True
+    while playing:
         print("\n---- Current State ----")
+        gamestate = GameState(player_character, MonsterFactory)
         print(gamestate.character.get_stats())
         print(gamestate.monster.get_stats())
 
@@ -30,13 +29,13 @@ def main():
             if winner == "player":
                 print(f"Victory! You defeated {gamestate.monster.name}!")
                 gamestate.monster_kills += 1
-                return
+                playing = True
             elif winner == "monster":
                 print(f"Game Over! {gamestate.character.name} has been defeated...")
-                return
+                playing = False
         elif command.lower() == "q":
             print("Goodbye!")
-            return
+            playing = False
         else:
             print("Invalid command. Please try again.")
 
