@@ -1,3 +1,5 @@
+import json
+
 from GameState import GameState
 from battleAI import Battle
 from characterFactory import CharacterFactory
@@ -5,6 +7,21 @@ from monsterFactory import MonsterFactory
 from charactercreator import CharacterCreator
 
 def main():
+    # Setup Campaign
+    with open("campaign.json") as f:
+        campaign = json.load(f)
+        title = campaign["title"]
+        current_act = campaign["acts"][0] #starting act 1
+        start_location = campaign["startingLocation"]
+
+    color_MAGENTA = "\033[35m"
+    color_WHITE = "\033[97m"
+    print(color_MAGENTA + campaign["title"])
+    print("\n"+ color_WHITE + campaign["description"] +"\n")
+
+
+
+    # Create a game state
     creator = CharacterCreator()
     player = creator.create_character()
     gamestate = GameState(player, MonsterFactory)

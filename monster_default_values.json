@@ -6,7 +6,8 @@
         "Intelligence": 10,
         "Wisdom": 8,
         "Charisma": 8,
-        "base_ac": 11
+        "base_ac": 11,
+        "hit_die": 8
       },
       "Orc": {
         "Strength": 16,
@@ -15,7 +16,8 @@
         "Intelligence": 7,
         "Wisdom": 11,
         "Charisma": 10,
-        "base_ac": 10
+        "base_ac": 10,
+        "hit_die": 10
       },
       "Troll": {
         "Strength": 18,
@@ -24,6 +26,17 @@
         "Intelligence": 7,
         "Wisdom": 9,
         "Charisma": 7,
-        "base_ac": 10
+        "base_ac": 10,
+        "hit_die": 10
+      },
+      "Blighted Dryad": {
+        "Strength": 14,
+        "Dexterity": 19,
+        "Constitution": 12,
+        "Intelligence": 14,
+        "Wisdom": 16,
+        "Charisma": 18,
+        "base_ac": 16,
+        "hit_die": 12
       }
 }
