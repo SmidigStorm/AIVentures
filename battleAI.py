@@ -59,9 +59,10 @@ class Battle:
 
     def monster_turn(self):
         print(f"\n{self.monster.name}'s turn!")
-        if random.random() < 0.7:  # 70% chance to attack
+        random_choice = random.random()
+        if random_choice < 0.7:  # 70% chance to attack
             return self.monster_attack()
-        elif random.random() < 0.9:  # 20% chance to defend
+        elif random_choice < 0.9:  # 20% chance to defend
             return self.monster_defend()
         else:  # 10% chance to use special ability
             return self.monster_special_ability()
