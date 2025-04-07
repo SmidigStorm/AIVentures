@@ -1,0 +1,141 @@
+{
+    "simple_melee": {
+        "Club": {
+            "damage_die": 4,
+            "damage_type": "bludgeoning",
+            "category": "Simple",
+            "properties": ["light"],
+            "cost_gp": 0.1,
+            "weight": 2,
+            "description": "A basic wooden club."
+        },
+        "Dagger": {
+            "damage_die": 4,
+            "damage_type": "piercing",
+            "category": "Simple",
+            "properties": ["finesse", "light", "thrown"],
+            "cost_gp": 2,
+            "weight": 1,
+            "description": "A small knife with a pointed blade."
+        },
+        "Mace": {
+            "damage_die": 6,
+            "damage_type": "bludgeoning",
+            "category": "Simple",
+            "properties": [],
+            "cost_gp": 5,
+            "weight": 4,
+            "description": "A basic mace with a heavy head."
+        },
+        "Greatclub": {
+            "damage_die": 8,
+            "damage_type": "bludgeoning",
+            "category": "Simple",
+            "properties": ["two-handed"],
+            "cost_gp": 0.2,
+            "weight": 10,
+            "description": "A heavy wooden club, sometimes studded with iron."
+        },
+        "Handaxe": {
+            "damage_die": 6,
+            "damage_type": "slashing",
+            "category": "Simple",
+            "properties": ["light", "thrown"],
+            "cost_gp": 5,
+            "weight": 2,
+            "description": "A small axe designed for one-handed use."
+        },
+        "Quarterstaff": {
+            "damage_die": 6,
+            "damage_type": "bludgeoning",
+            "category": "Simple",
+            "properties": ["versatile"],
+            "cost_gp": 0.2,
+            "weight": 4,
+            "description": "A wooden staff that can be wielded with one or two hands."
+        }
+    },
+    "simple_ranged": {
+        "Crossbow, light": {
+            "damage_die": 8,
+            "damage_type": "piercing",
+            "category": "Simple",
+            "properties": ["ammunition", "loading", "two-handed"],
+            "cost_gp": 25,
+            "weight": 5,
+            "range": "80/320",
+            "description": "A small crossbow that can be fired with one hand."
+        },
+        "Shortbow": {
+            "damage_die": 6,
+            "damage_type": "piercing",
+            "category": "Simple",
+            "properties": ["ammunition", "two-handed"],
+            "cost_gp": 25,
+            "weight": 2,
+            "range": "80/320",
+            "description": "A small bow that can be used on horseback."
+        }
+    },
+    "martial_melee": {
+        "Battleaxe": {
+            "damage_die": 8,
+            "damage_type": "slashing",
+            "category": "Martial",
+            "properties": ["versatile"],
+            "cost_gp": 10,
+            "weight": 4,
+            "description": "A heavy axe designed for warfare."
+        },
+        "Greatsword": {
+            "damage_die": 6,
+            "damage_type": "slashing",
+            "category": "Martial",
+            "properties": ["heavy", "two-handed"],
+            "cost_gp": 50,
+            "weight": 6,
+            "description": "A large sword designed to be wielded with two hands. Deals 2d6 damage.",
+            "damage_dice_count": 2
+        },
+        "Longsword": {
+            "damage_die": 8,
+            "damage_type": "slashing",
+            "category": "Martial",
+            "properties": ["versatile"],
+            "cost_gp": 15,
+            "weight": 3,
+            "description": "A sword with a double-edged blade and a long grip."
+        },
+        "Rapier": {
+            "damage_die": 8,
+            "damage_type": "piercing",
+            "category": "Martial",
+            "properties": ["finesse"],
+            "cost_gp": 25,
+            "weight": 2,
+            "description": "A slender, sharply pointed sword."
+        }
+    },
+    "martial_ranged": {
+        "Crossbow, heavy": {
+            "damage_die": 10,
+            "damage_type": "piercing",
+            "category": "Martial",
+            "properties": ["ammunition", "heavy", "loading", "two-handed"],
+            "cost_gp": 50,
+            "weight": 18,
+            "range": "100/400",
+            "description": "A large crossbow that requires a mechanism to load."
+        },
+        "Longbow": {
+            "damage_die": 8,
+            "damage_type": "piercing",
+            "category": "Martial",
+            "properties": ["ammunition", "heavy", "two-handed"],
+            "cost_gp": 50,
+            "weight": 2,
+            "range": "150/600",
+            "description": "A tall bow that is usually taller than the user."
+        }
+    }
+}
