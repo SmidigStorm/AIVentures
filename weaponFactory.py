@@ -19,6 +19,22 @@ class WeaponFactory:
         """Returns a list of all weapon names."""
         return list(self.all_weapons.keys())
 
+    def get_weapons_by_category(self, category=None):
+        """Returns a dictionary of weapons filtered by category (simple/martial) if provided."""
+        if category is None:
+            return self.all_weapons
+
+        return {name: data for name, data in self.all_weapons.items()
+                if data["category"].lower() == category.lower()}
+
+    def get_weapons_by_type(self, weapon_type=None):
+        """Returns a dictionary of weapons filtered by type (melee/ranged) if provided."""
+        if weapon_type is None:
+            return self.all_weapons
+
+        return {name: data for name, data in self.all_weapons.items()
+                if weapon_type.lower() in data["type"].lower()}
+
     def get_weapon_by_name(self, weapon_name):
         """Creates and returns a Weapon object based on the weapon name."""
         if weapon_name not in self.all_weapons:
