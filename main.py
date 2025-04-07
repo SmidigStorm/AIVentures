@@ -5,12 +5,11 @@ from monsterFactory import MonsterFactory
 from charactercreator import CharacterCreator
 
 def main():
-    # Create character using CharacterCreator
     creator = CharacterCreator()
     player = creator.create_character()
 
     # Main loop
-    playing = True
+    playing = True # TODO: Add more states later (CREATOR, IDLE, BATTLE, ENDING
     while playing:
         print("\n---- Current State ----")
         gamestate = GameState(player, MonsterFactory)

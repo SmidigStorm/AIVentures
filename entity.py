@@ -24,20 +24,20 @@ class Entity:
     def get_stats(self):
         stats = (
             f"Name: {self.name}\n"
-            f"Race: {self.race}\n"
+            f"Race: {self.race}, "
             f"Class: {self.class_name}\n"
-            f"Strength: {self.strength}\n"
+            f"Strength: {self.strength}, "
             f"Dexterity: {self.dexterity}\n"
-            f"Constitution: {self.constitution}\n"
+            f"Constitution: {self.constitution}, "
             f"Intelligence: {self.intelligence}\n"
-            f"Wisdom: {self.wisdom}\n"
+            f"Wisdom: {self.wisdom}, "
             f"Charisma: {self.charisma}\n"
-            f"Skills: {self.skills}\n"
+            f"Skills: {self.skills}, "
             f"Inventory: {[item.name for item in self.inventory]}\n"
-            f"Level: {self.level}\n"
+            f"Level: {self.level}, "
             f"Experience Points: {self.xp}\n"
             f"Hit Points: {self.current_hit_points}/{self.max_hit_points}\n"
-            f"Armor Class: {self.armor_class}\n"
+            f"Armor Class: {self.armor_class}, "
             f"Damage Reduction: {self.damage_reduction}\n"
         )
         return stats
