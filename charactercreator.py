@@ -1,10 +1,12 @@
 import json
 from characterFactory import CharacterFactory
+from weaponFactory import WeaponFactory
 
 
 class CharacterCreator:
     def __init__(self):
         self.character_factory = CharacterFactory()
+        self.weapon_factory = WeaponFactory()
 
         with open("races.json") as jsonfile:
             self.races = json.load(jsonfile)
@@ -18,6 +20,8 @@ class CharacterCreator:
         class_name = self.choose_class()
 
         character = self.character_factory.create_character(name, race, class_name)
+        weapon = self.choose_weapon()
+        character.add_item(weapon)
         return character
 
     def get_character_name(self):
@@ -60,6 +64,25 @@ class CharacterCreator:
                 index = int(choice) - 1
                 if 0 <= index < len(class_names):
                     return class_names[index]
+                else:
+                    print("Invalid choice. Please try again.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+
+    def choose_weapon(self):
+        print("\nAvailable weapons:")
+        weapons = self.weapon_factory.get_weapon_list()
+
+        for i, weapon in enumerate(weapons, 1):
+            print(f"{i}. {weapon}")
+
+        while True:
+            choice = input("Choose a weapon (enter the number): ")
+            try:
+                index = int(choice) - 1
+                if 0 <= index < len(weapons):
+                    return self.weapon_factory.get_weapon_by_name(weapons[index])
                 else:
                     print("Invalid choice. Please try again.")
             except ValueError:
