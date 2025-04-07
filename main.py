@@ -31,7 +31,8 @@ def main():
                 print(f"Victory! You defeated {gamestate.monster.name}!")
                 gamestate.monster_kills += 1
                 # Creating a new monster for next round
-                monster = MonsterFactory().create_monster("Baltazar2", "Goblin","Ranger",2)
+                monster = MonsterFactory().create_monster("Baltazar2", "Goblin",
+                                                          "Ranger",2)
                 gamestate.monster = monster
                 playing = True
             elif winner == "monster":
