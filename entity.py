@@ -84,7 +84,7 @@ class Entity:
         if item.equipment_type in self.equipment:
             self.unequip(item.equipment_type)
             self.equipment[item.equipment_type] = item
-            self.update_stats(item, equip=True)
+            # self.update_stats(item, equip=True)
             print(f"{self.name} has equipped {item.name}.")
 
     def unequip(self, equipment_type):

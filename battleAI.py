@@ -18,7 +18,7 @@ class Battle:
     def player_turn(self):
         print(f"\n{self.character.name}'s turn!")
         while True:
-            action = input("Do you want to (a)ttack, (d)efend, (u)se an item, or use a (s)pecial ability? ").lower()
+            action = input("Do you want to\n (a)ttack, (d)efend, (u)se an item, or use a (s)pecial ability? ").lower()
             if action == 'a':
                 return self.player_attack()
             elif action == 'd':
@@ -48,6 +48,9 @@ class Battle:
                 item_index = int(choice) - 1
                 if 0 <= item_index < len(usable_items):
                     chosen_item = usable_items[item_index]
+                    if self.chosen_item.equipment_type == EquipmentType.WEAPON:
+                        self.character.equip(chosen_item)
+                        return "equip_item", chosen_item.name
                     if self.character.use_item(chosen_item):
                         return "use_item", chosen_item.name
                     else:

@@ -47,6 +47,7 @@ class Character(Entity):
         self.skills[skill] = proficiency
 
     def add_item(self, item):
+        item.is_usable_in_battle = True
         self.inventory.append(item)
 
     def remove_item(self, item):

@@ -22,6 +22,8 @@ class CharacterCreator:
         character = self.character_factory.create_character(name, race, class_name)
         weapon = self.choose_weapon()
         character.add_item(weapon)
+        character.equip(weapon)
+
         return character
 
     def get_character_name(self):

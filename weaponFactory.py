@@ -43,9 +43,11 @@ class WeaponFactory:
         weapon_data = self.all_weapons[weapon_name]
         properties = weapon_data.get("properties", [])
         damage_dice_count = weapon_data.get("damage_dice_count", 1)
+        description = weapon_data.get("description", "")
 
         return Weapon(
             name=weapon_name,
+            description=description,
             damage_die=weapon_data["damage_die"],
             damage_type=weapon_data["damage_type"],
             category=weapon_data["category"],
