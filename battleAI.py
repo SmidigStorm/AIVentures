@@ -21,17 +21,15 @@ class Battle:
     def player_turn(self):
         print(f"\n{self.character.name}'s turn!")
         while True:
-            action = input("Do you want to\n (a)ttack, (d)efend, (u)se an item, or use a (s)pecial ability? ").lower()
+            action = input("Do you want to\n(a)ttack, (d)efend or (u)se an item? ").lower()
             if action == 'a':
                 return self.player_attack()
             elif action == 'd':
                 return self.player_defend()
             elif action == 'u':
                 return self.player_use_item()
-            elif action == 's':
-                return self.player_special_ability()
             else:
-                print("Invalid action. Please choose 'a', 'd', 'u', or 's'.")
+                print("Invalid action. Please choose 'a', 'd' or 'u'.")
 
     def player_use_item(self):
         usable_items = self.character.get_usable_items()
@@ -75,7 +73,7 @@ class Battle:
         print(f"{self.character.name} rolls {attack_roll} to hit against AC {self.monster.armor_class}")
 
         if attack_roll >= self.monster.armor_class:
-            damage_dealt = max(1, Dice.roll_d6() + self.character.strength)
+            damage_dealt = max(1, Dice.roll_d6() + ((self.character.strength - 10) // 2)) # Default damage is 1d6 + modifier
 
             weapon = self.character.equipment.get(EquipmentType.WEAPON)
             if weapon:
@@ -142,7 +140,7 @@ class Battle:
             return None
 
     def run_battle(self):
-        print(f"Battle begins: {self.character.name} vs {self.monster.name}")
+        print(f"\033[35mBattle begins:\033[97m {self.character.name} vs {self.monster.name}")
         initiative = self.calculate_initiative()
 
         while True:
@@ -174,7 +172,7 @@ class Battle:
             print(f"{self.character.name} has won the battle and gained {xp_award} experience points!")
             return "player"
         else:
-            print(f"{self.monster.name} has defeated {self.character.name}!")
+            print(f"\033[35m{self.monster.name} has defeated {self.character.name}!")
             return "monster"
 
     def calculate_xp_award(self):
