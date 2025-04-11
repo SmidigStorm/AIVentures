@@ -1,16 +1,16 @@
 from armor import Armor
 from equipmentType import EquipmentType
 class Entity:
-    def __init__(self, name, race, class_name, strength, dexterity, constitution, intelligence, wisdom, charisma):
+    def __init__(self, name, race, class_name, strength_score, strength_modifier, dexterity_score, dexterity_modifier, constitution_score, constitution_modifier, intelligence_score, intelligence_modifier, wisdom_score, wisdom_modifier, charisma_score, charisma_modifier):
         self.name = name
         self.race = race
         self.class_name = class_name
-        self.strength = strength
-        self.dexterity = dexterity
-        self.constitution = constitution
-        self.intelligence = intelligence
-        self.wisdom = wisdom
-        self.charisma = charisma
+        self.strength = strength_score
+        self.dexterity = dexterity_score
+        self.constitution = constitution_score
+        self.intelligence = intelligence_score
+        self.wisdom = wisdom_score
+        self.charisma = charisma_score
         self.skills = {}
         self.inventory = []
         self.level = 1
