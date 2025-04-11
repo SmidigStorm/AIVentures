@@ -58,13 +58,13 @@ class Entity:
         # Code to roll for stats
         pass
 
-    def assign_stats(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
-        self.strength = strength
-        self.dexterity = dexterity
-        self.constitution = constitution
-        self.intelligence = intelligence
-        self.wisdom = wisdom
-        self.charisma = charisma
+    def assign_stats(self, strength_score, dexterity_score, constitution_score, intelligence_score, wisdom_score, charisma_score):
+        self.strength_score = strength_score
+        self.dexterity_score = dexterity_score
+        self.constitution_score = constitution_score
+        self.intelligence_score = intelligence_score
+        self.wisdom_score = wisdom_score
+        self.charisma_score = charisma_score
 
     def add_skill(self, skill, proficiency):
         self.skills[skill] = proficiency
